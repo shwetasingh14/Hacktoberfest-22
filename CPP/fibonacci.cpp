@@ -1,16 +1,17 @@
-#include <iostream>  
-using namespace std;  
-int main() {  
-  int n1=0,n2=1,n3,i,number;    
- cout<<"Enter the number of elements: ";    
- cin>>number;    
- cout<<n1<<" "<<n2<<" "; //printing 0 and 1    
- for(i=2;i<number;++i) //loop starts from 2 because 0 and 1 are already printed    
- {    
-  n3=n1+n2;    
-  cout<<n3<<" ";    
-  n1=n2;    
-  n2=n3;    
- }    
-   return 0;  
-   }  
+#include <bits/stdc++.h>
+using namespace std;
+//recursive function for fibonacci
+int fibonacci(int n)
+{
+    if(n<=1)
+    {
+        return n;
+    }
+    return fibonacci(n-1)+fibonacci(n-2);
+}
+int main()
+{
+   int n;
+   n=10;
+   cout<<fibonacci(n);
+}
