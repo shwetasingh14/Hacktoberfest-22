@@ -1,5 +1,5 @@
 # Python3 code to find nth ugly number
-
+# Ugly numbers are numbers whose only prime factors are 2, 3 or 5.
 # This function divides a by greatest
 # divisible power of b
 
