@@ -1,0 +1,46 @@
+/* 
+Question:-
+
+Reduce a string of lowercase characters in range ascii[‘a’..’z’]
+by doing a series of operations. In each operation, select a pair 
+of adjacent letters that match, and delete them.
+
+Delete as many characters as possible using this
+method and return the resulting string. If the final string is empty, 
+return Empty String
+
+Sample Input 0
+
+aaabccddd
+Sample Output 0
+
+abd
+Explanation 0
+
+Perform the following sequence of operations to get the final string:
+
+aaabccddd → abccddd → abddd → abd
+*/
+
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+	string s;
+	cin>>s;
+	int i=0;
+   while(i<s.size()){
+       if(i+1<s.size()&&s[i]==s[i+1]){
+           s.erase(s.begin()+i);
+           s.erase(s.begin()+i);
+        }
+        else if(s[i-1]==s[i])
+        i--;
+       else
+       i++;
+   }
+   cout<<s;
+	return 0;
+}
+
