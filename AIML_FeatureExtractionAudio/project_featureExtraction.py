@@ -12,8 +12,6 @@ librosa.load(audio_path, sr=44100)
 import IPython.display as ipd
 ipd.Audio(audio_path)                                  # plays the music
 
-import os
-os.startfile("C:\\Users\\Rajni Gupta\\Desktop\\Inhouse_Intership_AIML\\coding\\my_audio.wav")
 
 # display waveform
 import matplotlib.pyplot as plt
@@ -36,16 +34,15 @@ librosa.display.specshow(Xdb, sr=sr, x_axis='time', y_axis='log')
 plt.colorbar()
 
 
-
-
-#The zero crossing rate is the rate of sign-changes along a signal 
-#rate at which the signal changes from positive to negative or back
+#zero crossing rate (ZCR) 
+#ZCR is the rate of sign-changes along a signal rate at which the signal changes from positive to negative or back
 x, sr = librosa.load(audio_path)
+
+
 #Plot the signal:
 plt.figure(figsize=(14, 5))
 plt.title("Waveplot of Given Input")
 librosa.display.waveplot(x, sr=sr)
-
 
 
 # Zooming in
@@ -85,8 +82,8 @@ plt.plot(t, normalize(spectral_centroids), color='r')
 plt.show()
 
 
-# Spectral rolloff 
-# the frequency below which a specified percentage of the total spectral energy, e.g. 85%, lies.
+# Spectral rolloff (SR)
+# SR is the frequency below which a specified percentage of the total spectral energy, e.g. 85%, lies.
 spectral_rolloff = librosa.feature.spectral_rolloff(x, sr=sr)[0]
 librosa.display.waveplot(x, sr=sr, alpha=0.4)
 plt.plot(t, normalize(spectral_rolloff), color='r')
@@ -94,9 +91,8 @@ plt.title("Spectral rolloff along the waveform")
 plt.show()
 
 
-
-# Chroma Frequency 
-# entire spectrum is projected onto 12 bins representing the 12 distinct semitones (or chroma) of the musical octave
+# Chroma Frequency (CF)
+# In CF entire spectrum is projected onto 12 bins representing the 12 distinct semitones (or chroma) of the musical octave
 hop_length = 512
 chromagraph = librosa.feature.chroma_stft(x,sr=sr,hop_length=hop_length)
 plt.figure(figsize=(15,5))                       # audio signal decompes into 12 chroma subbands
@@ -122,7 +118,6 @@ mfccs = sklearn.preprocessing.scale(mfccs,axis=1)
 print("mfccs with zero Mean :\n",mfccs.mean(axis=1))
 print("\n")
 print("mfccs with unit Variance :\n",mfccs.var(axis=1))
-
 plt.figure(figsize=(20,10))
 plt.title("Graph Showing Feature Scaling with Zero MFCCs & Unit Variance")
 librosa.display.specshow(mfccs,sr=sr,x_axis='time')
