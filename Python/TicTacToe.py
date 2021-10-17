@@ -1,12 +1,13 @@
 import numpy as np
 import random
 
+# Will create the game dashboard of Tic-tac-toe
 def printBoard(board):
     print("\nBOARD:")
     for i in board:
         print(' | '.join(i))
 
-
+# Options to choose Game mode
 def instructions(mode):
     # print('\n')
     if mode == 1:
@@ -32,7 +33,7 @@ def instructions(mode):
         player2 = 'O'
     return player1, player2
 
-
+# Winning Logic for the Game
 def checkWin(board):
     # rows
     for i in board:
@@ -70,7 +71,7 @@ def inpToIndex(inp):
     elif inp == 9:
         return 2, 2
     
-    
+# 2 player game logic    
 def vsHuman(board, player1, player2):
     available = 9
     turn = player1
@@ -96,7 +97,7 @@ def vsHuman(board, player1, player2):
         return -3
     else: return win
 
-
+# single player game logic
 def vsRandomBot(board, player1, player2):
     available = 9
     availability_list = [1,2,3,4,5,6,7,8,9]
@@ -209,7 +210,7 @@ def findBestMove(board) :
                     bestVal = moveVal
     return bestMove
 
-
+# 1 player game with a trained bot
 def vsSmartBot(board, player1, player2):
     available = 9
     turn = player1
