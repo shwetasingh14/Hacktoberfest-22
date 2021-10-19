@@ -1,3 +1,4 @@
+#Dictionary of Roman Numerals
 tallies = {
     'I': 1,
     'V': 5,
@@ -9,6 +10,7 @@ tallies = {
     # specify more numerals if you wish
 }
 
+#Function to convert Roman Numerals to decimal numbers
 def RomanNumeralToDecimal(romanNumeral):
     sum = 0
     for i in range(len(romanNumeral) - 1):
