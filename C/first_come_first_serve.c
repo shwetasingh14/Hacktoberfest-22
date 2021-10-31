@@ -33,7 +33,7 @@ int main() {
 }
 
 
-// output:
+/* output:
 
 
 Enter the no.of processes : 3
@@ -45,3 +45,5 @@ Enter the burst times : 13 8 83
 	p3 		        83 		 21 	    104
 
 Average Waiting Time:11.33 	 Average Turnaround Time:46.00
+
+*/
