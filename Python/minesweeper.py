@@ -2,7 +2,7 @@
 """
 Created on Sun Oct 31 21:42:10 2021
 
-@author: dell
+@author: Hrithik Sawhney
 """
 import pygame
 import sys
