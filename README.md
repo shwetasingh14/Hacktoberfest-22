@@ -1,5 +1,5 @@
-# Hacktoberfest-21  
-Write a program on any programming language and upload it.  
+# Hacktoberfest-22 is here!!
+Write a program in any programming language and upload it.  
 
 # :handshake: Our Contributors
 <a href="https://github.com/PraSarOG/Hacktoberfest-21/graphs/contributors">
