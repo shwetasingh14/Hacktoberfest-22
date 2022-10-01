@@ -1,40 +1,41 @@
 #include <iostream>
 using namespace std;
 
-template<class T>
-int bSearch(T arr[],int l, int r,T ele)
-{
-    int mid = (l+r)/2;
-    if(l<r)
-    {
-        if(arr[mid] > ele)
-            bSearch(arr,l,mid-1,ele);
-        else if(arr[mid] < ele)
-            bSearch(arr,mid+1,r,ele);
-        else
-            return mid;
+int binarySearch(int arr[], int left, int right, int x) {
+  while (left <= right) {
+    int mid =  (right + left) / 2;
+
+    if (arr[mid] == x) {
+      return mid;
+    } else if (arr[mid] < x) {
+      left = mid + 1;
+    } else {
+      right = mid - 1;
     }
-    
+  }
+
+  return 0;
 }
 
-int main()
-{
-    int pos,n,key,i;
-    cout<<"Enter the size of the array : ";
-    cin>>n;
-    int arr[n];
-    cout<<"Enter the "<<n<<" elements : ";
-    for(i=0;i<n;i++)
-    {
-        cin>>arr[i];
-    }
-    cout<<"Enter the element to be found : ";
-    cin>>key;
-    pos = bSearch(arr,0,n-1,key);
-    if(pos != -1)
-        cout<<"Element is present at "<<pos<<" position";
-    else
-        cout<<"Element is not present";
+int main() {
+  int arr1[10];
+  int n;
+  int key;
 
-    return 0;
+  cout << "Enter 10 elements "<<endl;
+  for (int i = 0; i < 10; i++) {
+    cin >> arr1[i];
+  }
+  cout <<"Enter an element to be searched "<< endl;
+  cin >> n;
+
+  key= binarySearch(arr1, 0, 9, n);
+
+  if (key == -1) {
+    cout << "Not Found" << endl;
+  } else {
+    cout <<n<<" is found at "<< key<<"th index"<< endl;
+  }
+
+  return 0;
 }
