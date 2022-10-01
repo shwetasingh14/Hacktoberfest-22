@@ -1,48 +1,26 @@
-#include <iostream>
-using namespace std;
+#include<stdio.h>
 
-template <typename T> void Linear_search(T *array,int size,T x ) {
-	int c = 0; 
-	for(int i=0; i<size; i++) {
-		
-		c++;
-		if(x==array[i]) {
-			cout<<x<<" is found at "<<i<<"th index "<<endl;
-			cout<<"No of comparisions : "<<c<<endl;
-			return;
-		}	
-	}
-	cout<<x<<" is not found !!!"<<endl;
-	cout<<"No of comparisions : "<<c<<endl;
-	return;
-}	
-
-int main() {
-	
-	cout<<"**** Linear search *****"<<endl<<endl;
-	
-	int size;
-	cout<<"Enter the size of array : "<<endl;
-	cin>>size;
-	
-	int *array = new int[size];
-	cout<<"Enter the elements of array : "<<endl;
-	for(int i=0; i<size; i++) {
-		cin>>array[i];
-	}
-
-	int choice=1;
-	while(choice) {
-		
-		cout<<"\nEnter number for search "<<endl;
-	    int num;
-	    cin>>num;
-	    
-	    Linear_search(array,size,num);
-	    
-	    cout<<"Do you want to continue ? yes/no = 0/1 ";
-	    cin>>choice;
-	}
+int rec_linear_search(int arr[], int left, int right, int x) 
+{
+  int result;
+  if (right < left)        // The array is exhausted so return -1
+    return -1;
+  if (arr[left] == x)        // If element found return position
+    return left;
+  // Call the function again with new subarray from next element.
+  result = rec_linear_search(arr, left+1, right, x);     
+  return result;    // return the result to the calling function.
 }
 
+int main() 
+{
+  int loc,x,array[]={10,11,12,13,14,25,26,37,48,29};
+  x=13;            // element to be searched in the array
+  loc=rec_linear_search(array,0,10,x);
+  if(loc != -1)
+    printf("Element found at location : %d",loc);
+  else
+    printf("Element not present in the array.");
+  return 0;
+}
 
