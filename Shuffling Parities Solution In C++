@@ -1,0 +1,42 @@
+/*
+Shuffling Parities Solution In C++
+Link: https://www.codechef.com/submit/SHUFFLIN
+Author: Shourya Gupta
+*/
+#include<iostream>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int odd=0,even=0,diff=0;
+        int n;
+        cin>>n;
+        int arr[n];
+        for(int j=0;j<n;j++)
+        {
+            cin>>arr[j];
+        }
+        for(int i=0;i<n;i++)
+        {
+            if(arr[i]%2==0)
+                even++;
+            else
+                odd++;
+        }
+
+        if(even>=odd)
+        {
+            diff=even-odd;
+
+            cout<<2*odd+((diff+1)/2)<<endl;
+        }
+        if(odd>even)
+        {
+            diff=odd-even;
+            cout<<2*even+diff/2<<endl;
+        }
+    }
+}
