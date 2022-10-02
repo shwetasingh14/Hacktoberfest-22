@@ -17,4 +17,4 @@ Aaaaand you're done!<br>
 </a>
 <br>
 <br>
-<img width="2400" alt="Email Banners-Dark" src="https://user-images.githubusercontent.com/55887682/193441405-6fe3248a-8970-4c78-a5d1-cd5c0768c23e.png">
+<img width="1500" alt="Email Banners-Dark" src="https://user-images.githubusercontent.com/55887682/193441405-6fe3248a-8970-4c78-a5d1-cd5c0768c23e.png">
