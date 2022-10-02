@@ -3,8 +3,8 @@
 # Hacktoberfest 2k22 is here!!!
 Participate Now and stand a chance to win a Hacktoberfest T-shirt!
 
-Want to know how?
--> Register on Hacktoberfest.com
+Want to know how?<br>
+-> Register on Hacktoberfest.com<br>
 -> Fork this Repository
 -> Write a program in C++, C, Java, Python, or any other programming language you know
 -> Push it in your fork
