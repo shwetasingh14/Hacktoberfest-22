@@ -11,39 +11,37 @@ Worst case: O(Log n)
 Space Complexity: O(1)
 */
 
-#include<iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-int main()
+int binarySearch(int arr[],int n, int key)
 {
-    int n=6;
-    int nums[] = {-1,0,3,5,9,12};
-    int l=0, r=n-1, f=0;
-    int target = 9;
-        
-        while(l<=r){
-            //find mid
-            int m = l + (r-l)/2;
-            
-            //Element find in the array
-            if(nums[m]==target){
-                cout << "Element find index at:" << m;
-                f=1;
-                break;
-            }
-            
-            //if arr[mid]>target then search in left side array  
-            else if(nums[m]>target)
-                r=m-1;
-            
-            //if arr[mid]<target then search in right side array     
-            else
-                l=m+1;
+    int s=0; // start with 0, first element of the array
+    int e=n-1; // end with n-1, last element of the array
+    int mid;
+    while(s<=e) // run the loop whenever the end is grater or equel to start
+    {
+        int mid= s+(e-s)/2; // To avoid overflow
+        if(arr[mid]==key)
+        {
+            return mid;   
         }
-    
-    if(f==0){
-        cout << "Element not found";
+        else if(arr[mid]>key)
+        {
+            e=mid-1;
+        }
+        else
+        {
+            s=mid+1;
+        }
     }
-    
-    return 0;
+    return -1; // If the element is not found then return defult value -1
+}
+signed main() {
+ios_base::sync_with_stdio(false);
+cin.tie(nullptr);
+//Driver Code
+int Arr[8]={1,5,8,4,6,11,0,2};
+cout<<binarySearch(Arr,8,8);
+return 0;
 }
