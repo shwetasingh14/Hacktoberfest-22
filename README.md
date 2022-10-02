@@ -15,5 +15,6 @@ Aaaaand you're done!<br>
 <a href="https://github.com/PraSarOG/Hacktoberfest-21/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=PraSarOG/Hacktoberfest-21" />
 </a>
-
+<br>
+<br>
 <img width="2400" alt="Email Banners-Dark" src="https://user-images.githubusercontent.com/55887682/193441405-6fe3248a-8970-4c78-a5d1-cd5c0768c23e.png">
